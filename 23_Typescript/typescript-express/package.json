@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "express": "*"
+  },
+  "devDependencies": {
+    "@types/express": "*"
+  },
+  "scripts": {
+    "start": "tsc && node dist/app-router.js"
+  }
+}
