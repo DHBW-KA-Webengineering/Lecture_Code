@@ -1,0 +1,100 @@
+<!--  
+  SPDX-License-Identifier: MPL-2.0
+  SPDX-FileCopyrightText: 2025 Lukas Panni
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      form {
+        margin-top: 20px;
+      }
+      label {
+        margin-right: 10px;
+      }
+      input[type="text"] {
+        padding: 5px;
+        margin-right: 10px;
+      }
+      button {
+        padding: 5px 10px;
+      }
+      #results {
+        margin-top: 20px;
+      }
+      .result-item {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      .result-item h3 {
+        margin: 0;
+        font-size: 1.2em;
+      }
+      .result-item p {
+        margin: 5px 0;
+      }
+      .result-item .author {
+        font-style: italic;
+        color: #555;
+      }
+      .error {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="searchForm" action="/search" method="get">
+      <label for="query">Search:</label>
+      <input type="text" id="query" name="query" />
+      <button type="submit">Search</button>
+    </form>
+    <div id="results"></div>
+    <script>
+      document.getElementById("searchForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const query = document.getElementById("query").value;
+        fetch(`/search?query=${encodeURIComponent(query)}`)
+          .then(async (response) => {
+            if (!response.ok) {
+              throw new Error("Failed to fetch data from the server", { cause: await response.text() });
+            }
+            return response.json();
+          })
+          .then((data) => {
+            const resultsContainer = document.getElementById("results");
+            resultsContainer.innerHTML = "";
+            data.forEach((item) => {
+              const resultItem = document.createElement("div");
+              resultItem.className = "result-item";
+              resultItem.innerHTML = `
+                <h3>${item.title}</h3>
+                <p>${item.text}</p>
+                <p class="author">Author ID: ${item.author}</p>
+                <p>ID: ${item.id}</p>
+              `;
+              resultsContainer.appendChild(resultItem);
+            });
+          })
+          .catch((error) => {
+            const resultsContainer = document.getElementById("results");
+            if (!"message" in error || !"cause" in error) {
+              resultsContainer.innerHTML = `<p class="error">An error occurred:</p>`;
+              results.Container.innerHTML += `<p class="error">${error}</p>`;
+            }
+            resultsContainer.innerHTML = `<p class="error">An error occurred: ${error.message}</p>`;
+            resultsContainer.innerHTML += `<p class="error">${error.cause}</p>`;
+            console.error("Error:", error);
+          });
+      });
+    </script>
+  </body>
+</html>
