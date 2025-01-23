@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MPL-2.0
+// SPDX-FileCopyrightText: 2025 Lukas Panni
+
 import { relations } from "drizzle-orm";
 import { int, text, sqliteTable } from "drizzle-orm/sqlite-core";
 

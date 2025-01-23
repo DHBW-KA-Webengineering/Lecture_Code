@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MPL-2.0
-// SPDX-FileCopyrightText: 2024 Lukas Panni
+// SPDX-FileCopyrightText: 2025 Lukas Panni
 const var1 = ["a", "b", "c"];
 const var2 = { a: 1 };
 

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MPL-2.0
-// SPDX-FileCopyrightText: 2024 Lukas Panni
+// SPDX-FileCopyrightText: 2025 Lukas Panni
 import express from "express";
 import { router as userRouter } from "./user-router.js";
 

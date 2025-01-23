@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MPL-2.0
+// SPDX-FileCopyrightText: 2025 Lukas Panni
 import { Elysia, t } from "elysia";
 
 const app = new Elysia()
