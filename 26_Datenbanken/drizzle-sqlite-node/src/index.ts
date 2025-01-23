@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MPL-2.0
+// SPDX-FileCopyrightText: 2025 Lukas Panni
+
 import "dotenv/config";
 import { drizzle } from "drizzle-orm/libsql";
 import * as schema from "./db/schema";
