@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Formular Übung</title>
+  </head>
+  <body>
+    <h1>Registrierungsformular</h1>
+    <form
+      action="https://httpbin.org/post"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <fieldset>
+        <legend>Persönliche Informationen</legend>
+
+        <label for="first_name">Vorname:</label>
+        <input
+          type="text"
+          id="first_name"
+          name="first_name"
+          required
+        /><br /><br />
+
+        <label for="last_name">Nachname:</label>
+        <input
+          type="text"
+          id="last_name"
+          name="last_name"
+          required
+        /><br /><br />
+
+        <label for="email">E-Mail-Adresse:</label>
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="birth_date">Geburtsdatum:</label>
+        <input
+          type="date"
+          id="birth_date"
+          name="birth_date"
+          required
+        /><br /><br />
+
+        <label>Geschlecht:</label><br />
+        <input type="radio" id="male" name="gender" value="male" required />
+        <label for="male">Männlich</label><br />
+
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Weiblich</label><br />
+
+        <input type="radio" id="diverse" name="gender" value="diverse" />
+        <label for="diverse">Divers</label><br /><br />
+
+        <label for="favorite_color">Lieblingsfarbe:</label>
+        <input
+          type="color"
+          id="favorite_color"
+          name="favorite_color"
+        /><br /><br />
+
+        <label for="profile_picture">Profilbild hochladen:</label>
+        <input
+          type="file"
+          id="profile_picture"
+          name="profile_picture"
+          accept="image/*"
+        /><br /><br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Anmeldedaten</legend>
+
+        <label for="password">Passwort:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+
+        <label for="confirm_password">Passwort wiederholen:</label>
+        <input
+          type="password"
+          id="confirm_password"
+          name="confirm_password"
+          required
+        /><br /><br />
+      </fieldset>
+
+      <button type="submit">Absenden</button>
+    </form>
+  </body>
+</html>
