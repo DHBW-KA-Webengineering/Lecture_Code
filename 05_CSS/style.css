@@ -1,0 +1,12 @@
+body {
+  color: whitesmoke;
+  background-color: #333;
+}
+
+a {
+  color: whitesmoke;
+}
+
+a[href^="article"] {
+  border: 1px dotted whitesmoke;
+}
