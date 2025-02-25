@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex Suche</title>
+    <link rel="stylesheet" type="text/css" href="pokemon.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Pokédex-Suche</h2>
+      <input
+        type="number"
+        id="pokedexNumber"
+        placeholder="Gib eine Pokédex-Nummer ein"
+        min="1"
+      />
+      <button onclick="fetchPokemon()">Suchen</button>
+
+      <div class="pokemon-info" id="pokemonInfo"></div>
+    </div>
+
+    <script type="text/javascript" src="pokemon.js"></script>
+  </body>
+</html>
