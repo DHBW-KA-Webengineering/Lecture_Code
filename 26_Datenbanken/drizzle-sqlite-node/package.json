@@ -10,8 +10,8 @@
   "author": "Lukas Panni",
   "license": "MPL-2.0",
   "devDependencies": {
-    "drizzle-kit": "^0.30.2",
-    "tsx": "^4.19.2",
+    "drizzle-kit": "^0.31.1",
+    "tsx": "^4.19.4",
     "typescript": "^5.7.3"
   },
   "dependencies": {
