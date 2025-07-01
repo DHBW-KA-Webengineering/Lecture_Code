@@ -19,7 +19,14 @@ app.get("/search", async (req, res) => {
     driver: sqlite3.Database,
   });
 
-  const sqlQuery = `SELECT * FROM posts WHERE posts.title LIKE '%${req.query.query}%'`;
+  const query = String(req.query.query);
+
+  if (query.length < 1) {
+    res.status(400).send("Query can't be empty");
+    return;
+  }
+
+  const sqlQuery = `SELECT * FROM posts WHERE posts.title LIKE '%${query}%'`;
   console.log("Running SQL query", sqlQuery);
   try {
     const result = await client.all(sqlQuery);
