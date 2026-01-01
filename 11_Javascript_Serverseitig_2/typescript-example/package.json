@@ -1,9 +1,0 @@
-{
-  "type": "module",
-  "dependencies": {
-    "typescript": "*"
-  },
-  "devDependencies": {
-    "@types/bun": "^1.0.4"
-  }
-}
