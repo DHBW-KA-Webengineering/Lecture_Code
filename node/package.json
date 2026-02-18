@@ -1,0 +1,13 @@
+{
+  "name": "node-test-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "browser-sync --server --files=\"**/*\"",
+    "hallo": "echo \"Hallo Welt\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
+  }
+}

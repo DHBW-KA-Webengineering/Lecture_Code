@@ -1,0 +1,9 @@
+.menu {
+  display: flex;
+  width: 100vw;
+  border: 1px solid black;
+  list-style: none;
+  .menuItem {
+    padding: 50px;
+  }
+}
