@@ -1,7 +1,7 @@
 import type { UserRepository, User } from "./types";
 
 export class InMemoryUserRepository implements UserRepository {
-  private users: User[] = [];
+  constructor(private users: User[] = []) {}
 
   getAllUsers(): User[] {
     return this.users;

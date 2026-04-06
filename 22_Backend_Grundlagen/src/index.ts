@@ -1,10 +1,10 @@
-import type { UserRepository } from "./user/types";
-import { InMemoryUserRepository } from "./user/user-repository";
+import appShell from "../public/index.html";
+import { serve } from "bun";
 
-const getUserStore = (): UserRepository => {
-  if (process.env.NODE_ENV === "development") {
-    console.log("Running in development mode");
-    return new InMemoryUserRepository();
-  }
-  throw new Error("No user repository implemented for production");
-};
+serve({
+  routes: {
+    "/": appShell,
+  },
+  port: 3002,
+  development: true,
+});
