@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: MPL-2.0
+// SPDX-FileCopyrightText: 2025 Lukas Panni
+import express from "express";
+
+type User = { id: number; name: string };
+
+const users: Array<User> = [
+  { id: 1, name: "Max" },
+  { id: 2, name: "Moritz" },
+];
+
+const app = express();
+app.get("/users", (request, response) => {
+  response.send(users);
+});
+
+app.listen(80, () => {
+  console.log("Server gestartet");
+});
