@@ -9,7 +9,7 @@
   "author": "Lukas Panni",
   "license": "MPL-2.0",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.22.1"
   },
   "type": "module"
 }
