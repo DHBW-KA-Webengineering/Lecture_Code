@@ -1,0 +1,17 @@
+{
+  "name": "drizzle",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "drizzle-orm": "^0.45.2"
+  },
+  "devDependencies": {
+    "@libsql/client": "^0.17.2",
+    "@types/bun": "^1.3.12",
+    "drizzle-kit": "^0.31.10"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
